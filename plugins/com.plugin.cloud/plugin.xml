@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.plugin.cloud"
+        version="0.7.0">
+
+  <name>Syncloud</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/syncloud.js" target="js/syncloud.js"/>
+
+  <js-module src="www/syncloud.js" name="syncloud">
+    <clobbers target="syncloud" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="syncloud">
+        <param name="android-package" value="com.plugin.cloud.Syncloud"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Syncloud.java" target-dir="src/com/plugin/cloud/"/>
+  </platform>
+
+</plugin>
